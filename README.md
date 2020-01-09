@@ -24,8 +24,8 @@ As always, you will be submitting a technical report and a presentation. **You m
 Before you begin working on this project, please do the following:
 
 1. Sign up for an account on [Kaggle](https://www.kaggle.com/)
-2. **IMPORTANT**: Click this link ([Regression Challenge Sign Up](https://www.kaggle.com/t/702cd07e1a704bc1a1fd2b453b9f20d1)) to **join** the competition (otherwise you will not be able to make submissions!)
-3. Review the material on the [DSI-US-9 Regression Challenge](https://www.kaggle.com/c/dsi-us-9-project-2-regression-challenge)
+1
+3. Review the material on the [DSI-SMD-10 Regression Challenge](https://www.kaggle.com/c/dsi-smd-1-project-2-regression-challenge)
 4. Review the [data description](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt).
 
 ## The Modeling Process
