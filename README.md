@@ -1,28 +1,18 @@
-# Predicting Housing Prices in Ames, Iowa
+# Understanding the Housing Market: An exploration of Ames, Iowa
 
 ### Problem Statement
- 
-What factors have the biggest role in determining the price of a home?
-This analyses is a preliminary investigation into the factors that predict the price of residential property at sale. Throuhg the use of regression hrough a regression model based on the Ames Housing data set. 
-
-"A shift is taking place with home buyers. They want to invest in more than a home; they want to invest in the experience of living there." 
-(http://nahbnow.com/2020/01/how-to-build-communities-buyers-will-love-to-call-home/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+NAHBNow+%28NAHB+Now++%7C+The+News+Blog+of+the+National+Association+of+Home+Builders%29)
+The National Association of Home Builders (NAHB) seeks to grow their understanding of the housing market in Ames Iowa. They want to understand what buyers look for in a property and are investigating the factors that predict the price of a property. Geographic context and population demographics will be influential in the buyer market and relevant to NAHB, which is principally dedicated to building and enriching communities. 
 
 ## Executive Summary -- How are you tackling the problem statement?
-Ames, Iowa is best known as the home of Iowa State University. Half of the city's population is made up of university students.
+Through the use of multiple linear regression models, this analysis explores the role of property features based on a residential housing dataset.  Ames, Iowa is best known as the home of Iowa State University. Half of the city's population is made up of university students, which has a strong influence on the buyer market and sense of community.
 
-To better understand
-
-Focused on several features showing the highest correlation to sale price in the dataset. This inlcuded the following:
-- 
-
-### [Data Cleaning and Exploratory Analysis]()
+### [Data Cleaning and Exploratory Analysis](https://git.generalassemb.ly/jessicaertel/project_2/blob/master/code/01_EDA_Cleaning.ipynb)
 Columns containing 80-99% NaN values were dropped. Many of the categorical variables in this dataset contain a category "NA" which indicates there is "No Pool", "No Alley" or "None". The NA category is being interpreted as a null value, rather than the fact that the property does not have this feature. For this reason NaN values were replaced by either a 0 or the string 'None'. Several ordinal categorical variables were converted to integers. Outliers that could be identified as incorrect data and those without strong relevance to the problem statement were dropped. Visualizations are used to understand the distribution of the target and correlations with other variables.
 
-### [Preprocessing and Feature Engineering]()
+### [Preprocessing and Feature Engineering](https://git.generalassemb.ly/jessicaertel/project_2/blob/master/code/02_Preprocessing_Feature_Engineering.ipynb)
 Polynomial features was used to create interaction terms and see how the combination of two variables affect the target. A higher cross validation score was achieved on the model that utilized these engineered variables.
 
-### [Modeling]()
+### [Modeling](https://git.generalassemb.ly/jessicaertel/project_2/blob/master/code/03_Modeling.ipynb)
 The analysis uses simple sklearn regression models to determine which factors have the biggest role in determining the price of a home. Lasso and ridge regularization methods were used to simplify the models. Using a higher number of variables and the polynomial features resulted in a lower RMSE.
 
 ### Description of Data
@@ -41,12 +31,14 @@ third_submission.csv - submission of linear regression model to Kaggle
 A data dictionary can be found [here](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt) containing a full description of each column. 
 
 ### Business Recommendations
-The strongest performing model was a classical linear regression model that used 14 independent variables to predict sale price. The model achieved a cross validated score of 84.7%. The features were selected because they had a correlation with the target variable of greater than .3.
+The strongest performing model was a classical linear regression model that used 20 independent variables to predict sale price. The model achieved a cross validated score of 84.7%. The features were selected because they had a correlation with the target variable of greater than .3.
 
-The feature that shared the strongest linear relationship to the target was the 'overall quality' variable, which rates the overall material and finish of a house on a scale of 1-10. Properties in this dataset averaged an overall quality of approximately 6.1 with a median of 6. Engineering a feature that looks at overall quality and the square foot measurement of the living area increased the correlation with sale price from .80 to .84. Similarly, engineering a feature that looks at overall quality and the square foot measurement of the garage area had a correlation of .81. Overall quality is an aggregate descriptor that doesn't give much insight into the specific property features that might increase price. It makes sense that the relationship is stronger for properties with larger living and garage areas because size is often an indicator of price.
+> "A shift is taking place with home buyers. They want to invest in more than a home; they want to invest in the experience of living there." Source: [NABH Now](http://nahbnow.com/2020/01/how-to-build-communities-buyers-will-love-to-call-home/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+NAHBNow+%28NAHB+Now++%7C+The+News+Blog+of+the+National+Association+of+Home+Builders%29)
+
+The feature that shared the strongest linear relationship to the target was the 'overall quality' variable, which rates the overall material and finish of a house on a scale of 1-10. Properties in this dataset averaged an overall quality of approximately 6.1 with a median of 6. Engineering a feature that looks at overall quality and the square foot measurement of the living area increased the correlation with sale price from .80 to .84. Similarly, engineering a feature that looks at overall quality and the square foot measurement of the garage area had a correlation of .81. Overall quality is an aggregate descriptor, so it makes sense that the relationship becomes stronger when combined with size variables. Size is often an indicator of price. Variables related to the size and capacity of garages are relevant because transportation would be an important consideration given geographic features and the population demographic.
 
 ### Limitations and Future Analysis
 The next stage of analysis will focus on a few items:
-**Location**: cannot discount the role that location plays in property prices, so a deeper analysis would evaluate the relationship of each of these variables in the context of their location.
-**Outliers**: several variables in the dataset contained outliers, which is notable because outliers can affect the regression line. Next phases of development would involve investigating these outliers in depth and determining an appropriate way of handling them. The technique should be context specific, so future iterations of this analysis focused on different geographical regions should account site specific factors.
-**Timing**: Are more properties sold around a certain time of year? It would be interesting to see if this correlates with a fluctuating student population in the summer months.
+**Location**: To what degree is the buyer market concerned with location? We cannot discount the role that location plays in property prices, so a deeper analysis would evaluate the relationship of each of these variables in the context of their location.  
+**Outliers**: Several variables in the dataset contained outliers, which is notable because outliers can affect the regression line. Next phases of development would involve investigating these outliers in depth and determining an appropriate way of handling them. The technique should be context specific, so future iterations of this analysis focused on different geographical regions should account site specific factors.  
+**Timing**: Are buyers looking to purchase homes around a certain time of year? It could be interesting to see if this correlates with a fluctuating student population in the summer months.    
