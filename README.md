@@ -10,13 +10,14 @@ Through the use of multiple linear regression models, this analysis explores the
 The data set contains information from the Ames Assessor’s Office used in computing assessed values for residential properties sold in Ames, Iowa from 2006 to 2010. The information included in the data set is similar to what a home buyer would want to know before making a purchase. 
 
 #### Data Files
-train.csv - raw training set
-test.csv - raw test set
-train_clean.csv - clean training set, used for modeling
-test_clean.csv - clean test set, used for modeling
-first_submission.csv - submission of linear regression model to Kaggle
-second_submission.csv - submission of linear regression model to Kaggle
-third_submission.csv - submission of linear regression model to Kaggle
+- train.csv - raw training set
+- test.csv - raw test set
+- train_clean.csv - clean training set, used for modeling
+- test_clean.csv - clean test set, used for modeling
+**Kaggle Submissions**
+- first_submission.csv
+- second_submission.csv 
+- third_submission.csv 
 
 ### Data Dictionary
 A data dictionary can be found [here](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt) containing a full description of each column. 
